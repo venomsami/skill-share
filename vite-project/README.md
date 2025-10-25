@@ -1,16 +1,73 @@
-# React + Vite
+# SkillSwap 🎓🤝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collaborative platform where users can **share**, **learn**, and **exchange skills** with others. Users can register/login, browse skill listings, view detailed descriptions, and book sessions — all powered by **Firebase Authentication** and built with **React**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live URL
 
-## React Compiler
+👉 [Visit SkillSwap Live](https://astounding-marzipan-2bb47c.netlify.app/profile)  
+*(Replace with actual deployed URL)*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Project Purpose
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**SkillSwap** is designed to promote peer-to-peer learning and teaching. Whether it's music, design, programming, or wellness — users can connect with others to offer or gain skills.
+
+---
+
+## 🧩 Key Features
+
+### 🔐 Authentication
+- Email/password signup and login via **Firebase Auth**
+- Google social login
+- Password reset support
+
+### 📄 Pages
+- **Home Page** with Swiper slider and intro
+- **Browse Skills**: Lists popular skills with image, rating, price
+- **Skill Details**: Detailed description, image, booking form
+- **Profile Page**:
+  - Shows user name, email, photo
+  - Real-time **profile update**
+- **Protected Routes** for authenticated pages
+
+### 📦 Backend Integration
+- Firebase Authentication
+- Optional: Firebase Storage (for profile photo uploads)
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React (Vite)
+- React Router DOM
+- Bootstrap 5 (for layout & responsiveness)
+- SwiperJS (for carousel on homepage)
+
+### Firebase
+- Firebase Auth (Email/Password + Google)
+- Firebase SDK v9 (modular)
+
+---
+
+## 📦 NPM Packages Used
+
+| Package                  | Purpose                                 |
+|--------------------------|-----------------------------------------|
+| `firebase`               | Firebase Authentication                 |
+| `react-router-dom`       | Routing in React                        |
+| `swiper`                 | Carousel/Slider                         |
+| `bootstrap`              | Responsive UI components                |
+| `react-icons` (optional) | Icons (for stars, UI visuals, etc.)     |
+
+---
+
+## 🏁 Getting Started Locally
+
+1. **Clone this repo**
+   ```bash
+   git clone https://github.com/venomsami/skill-share.git
+   cd skillswap
