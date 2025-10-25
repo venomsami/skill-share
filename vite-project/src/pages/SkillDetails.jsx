@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-// You should fetch real data; this is placeholder
+// Matching skills from SkillListings.jsx
 const skills = [
   {
     skillId: "1",
@@ -12,7 +12,7 @@ const skills = [
     rating: 4.8,
     slotsAvailable: 3,
     description: "Acoustic guitar classes for complete beginners.",
-    image: "https://i.postimg.cc/example1.png",
+    image: "https://i.postimg.cc/90cK6b6w/guitar.jpg",
     category: "Music"
   },
   {
@@ -24,8 +24,56 @@ const skills = [
     rating: 4.6,
     slotsAvailable: 5,
     description: "Conversational English sessions for non-native speakers.",
-    image: "https://i.postimg.cc/example2.png",
+    image: "https://i.postimg.cc/qv9kPfjt/english.jpg",
     category: "Language"
+  },
+  {
+    skillId: "3",
+    skillName: "Basic Photography",
+    providerName: "John Doe",
+    providerEmail: "john@skillswap.com",
+    price: 15,
+    rating: 4.7,
+    slotsAvailable: 4,
+    description: "Learn camera basics and photo composition.",
+    image: "https://i.postimg.cc/ZnggWm9J/photography.jpg",
+    category: "Photography"
+  },
+  {
+    skillId: "4",
+    skillName: "Intro to Graphic Design",
+    providerName: "Emily Rose",
+    providerEmail: "emily@skillswap.com",
+    price: 18,
+    rating: 4.5,
+    slotsAvailable: 2,
+    description: "Start designing using Canva and Figma.",
+    image: "https://i.postimg.cc/vHTbD8Kc/graphic-design.jpg",
+    category: "Design"
+  },
+  {
+    skillId: "5",
+    skillName: "Python for Beginners",
+    providerName: "Tom Lee",
+    providerEmail: "tom@skillswap.com",
+    price: 25,
+    rating: 4.9,
+    slotsAvailable: 6,
+    description: "Understand the basics of Python programming.",
+    image: "https://i.postimg.cc/gkZtgfXs/python.png",
+    category: "Programming"
+  },
+  {
+    skillId: "6",
+    skillName: "Yoga for Wellness",
+    providerName: "Maya Devi",
+    providerEmail: "maya@skillswap.com",
+    price: 12,
+    rating: 4.8,
+    slotsAvailable: 3,
+    description: "Daily yoga sessions for balance and flexibility.",
+    image: "https://i.postimg.cc/yxqpKP26/yoga.jpg",
+    category: "Health"
   }
 ];
 
@@ -46,7 +94,6 @@ const SkillDetails = () => {
   const handleBookSession = (e) => {
     e.preventDefault();
     alert("Booking successful!");
-    // Clear form etc. if you add form fields
   };
 
   return (
@@ -68,7 +115,7 @@ const SkillDetails = () => {
         </div>
         <div className="mb-3">
           <label className="form-label">Email</label>
-          <input type="email" className="form-control" required defaultValue="" />
+          <input type="email" className="form-control" required />
         </div>
         <button type="submit" className="btn btn-success">Submit</button>
       </form>

@@ -1,20 +1,32 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup } = useAuth();
-  const navigate = useNavigate();
+  const { signup, signInWithGoogle } = useAuth();
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
     try {
       await signup(email, password);
-      navigate("/profile"); // redirect on success
+      navigate("/"); // redirect to homepage
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  const handleGoogleSignup = async () => {
+    setError("");
+
+    try {
+      await signInWithGoogle();
+      navigate("/"); // redirect to homepage
     } catch (err) {
       setError(err.message);
     }
@@ -22,7 +34,7 @@ const Signup = () => {
 
   return (
     <div className="container mt-5" style={{ maxWidth: "400px" }}>
-      <h2 className="mb-4">Create an Account</h2>
+      <h2 className="mb-4 text-center">Create an Account</h2>
       {error && <div className="alert alert-danger">{error}</div>}
 
       <form onSubmit={handleSubmit}>
@@ -48,10 +60,21 @@ const Signup = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary w-100">
+        <button type="submit" className="btn btn-primary w-100 mb-2">
           Sign Up
         </button>
       </form>
+
+      <button
+        onClick={handleGoogleSignup}
+        className="btn btn-outline-danger w-100 mb-3"
+      >
+        Sign up with Google
+      </button>
+
+      <div className="text-center">
+        Already have an account? <Link to="/login">Log In</Link>
+      </div>
     </div>
   );
 };
