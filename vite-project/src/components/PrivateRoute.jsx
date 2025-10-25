@@ -26,3 +26,4 @@ const PrivateRoute = ({ children }) => {
 };
 
 export default PrivateRoute;
+//updated private route
